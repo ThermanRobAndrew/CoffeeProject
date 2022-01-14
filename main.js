@@ -1,14 +1,11 @@
-//1
-//2
-//3
-//4
+
 
 
 
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="coffee row d-flex ">';
+    let html = '<div class="coffee col">';
     // html += '<p>' + coffee.id + '</p>';
     html += '<h3 class="col">' + coffee.name + '</h3>';
     html += '<p class="col">' + coffee.roast + '</p>';
