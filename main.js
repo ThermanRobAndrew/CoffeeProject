@@ -28,6 +28,8 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if(selectedRoast === "All"){
+            filteredCoffees.push(coffee)
         }
     });
     /// renders search function
@@ -93,4 +95,5 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
 nameButton.addEventListener('keyup', searchCoffees);
+
 
