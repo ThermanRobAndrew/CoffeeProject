@@ -8,11 +8,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<h3 class="coffee">';
-    html += '<p>' + coffee.id + '</p>';
-    html += '<p>' + coffee.name + '</p>';
-    html += '<p>' + coffee.roast + '</p>';
-    html += '</h3>';
+    let html = '<div class="coffee row d-flex ">';
+    // html += '<p>' + coffee.id + '</p>';
+    html += '<h3 class="col">' + coffee.name + '</h3>';
+    html += '<p class="col">' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -56,11 +56,12 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
 //   renders table data
-tbody.innerHTML = renderCoffees(coffees);
+tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
