@@ -1,9 +1,7 @@
-
-
-
-
 "use strict"
 
+
+// Display All Coffees
 function renderCoffee(coffee) {
     let html = '<div class="coffee col g-3 d-flex">';
     // html += '<p>' + coffee.id + '</p>';
@@ -14,6 +12,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// Loop through and display specific coffees
 function renderCoffees(coffees) {
     let html = '';
     for(let i = coffees.length - 1; i >= 0; i--) {
@@ -35,6 +34,21 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     let selectedRoast = roastSelection.value;
+//     let filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//
+//         if (coffee.roast !== )
+//         if (coffee.roast === selectedRoast) {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     /// renders search function
+//     tbody.innerHTML = renderCoffees(filteredCoffees);
+// }
+ // keyup function
  function searchCoffees(e){
      e.preventDefault();
      let searching = document.getElementById("searching" ).value.toLowerCase();
@@ -72,10 +86,11 @@ let coffees = [
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
-let nameButton = document.querySelector("#name-search")
+let nameButton = document.querySelector("#searching")
+
 //   renders table data
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
-nameButton.addEventListener('click', searchCoffees);
+nameButton.addEventListener('keyup', searchCoffees);
 
