@@ -15,7 +15,7 @@ function renderCoffee(coffee) {
 // Loop through and display specific coffees
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -25,10 +25,10 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-        } else if(selectedRoast === "All"){
+        } else if (selectedRoast === "All") {
             filteredCoffees.push(coffee)
         }
     });
@@ -50,21 +50,24 @@ function updateCoffees(e) {
 //     /// renders search function
 //     tbody.innerHTML = renderCoffees(filteredCoffees);
 // }
- // keyup function
- function searchCoffees(e){
-     e.preventDefault();
-     let searching = document.getElementById("searching" ).value.toLowerCase();
-     let searchCoffee = [];
-     coffees.forEach(function (coffee){
-         if(coffee.name.toLowerCase().includes(searching)){
-             searchCoffee.push(coffee)
-         }
-         }
-     );
-     tbody.innerHTML = renderCoffees(searchCoffee);
+// keyup function
+function searchCoffees(e) {
+    e.preventDefault();
+    let searching = document.getElementById("searching").value.toLowerCase();
+    let searchCoffee = [];
+    coffees.forEach(function (coffee) {
+            if (coffee.name.toLowerCase().includes(searching)) {
+                searchCoffee.push(coffee)
+            }
+        }
+    );
+    tbody.innerHTML = renderCoffees(searchCoffee);
 
 }
+
 /*searchCoffees();*/
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -84,28 +87,53 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+// add new coffee function
 
+function addACoffee(e) {
+    e.preventDefault();
+    let newRoastSelection = document.querySelector("#newRoast");
+    let newCoffeeName = document.querySelector("#newName");
+    let addedCoffee = {
+        id: coffees.length +1,
+        name: newCoffeeName.value,
+        roast: newRoastSelection.value
+    };
+    coffees.push(addedCoffee);
+    tbody.innerHTML = renderCoffees(coffees);
+}
+
+
+
+
+/// DOM Variables
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let nameButton = document.querySelector("#searching")
 
+
+let newCoffeeSubmit = document.querySelector("#newSubmit")
+
+
 //   renders table data
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
+
+//// Event Listeners
 submitButton.addEventListener('click', updateCoffees);
 nameButton.addEventListener('keyup', searchCoffees);
+newCoffeeSubmit.addEventListener("click", addACoffee);
 
 // button    White-Mode//
-document.getElementById("btn").addEventListener("click", function() {
+document.getElementById("btn").addEventListener("click", function () {
 
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: black; opacity: 0.2; border: solid grey 4px; color:white;" )
+    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: black; opacity: 0.2; border: solid grey 4px; color:white;")
     console.log(document.getElementById("title"))
 })
 // button 2   White-Mode//
-document.getElementById("btn-two").addEventListener("click", function() {
+document.getElementById("btn-two").addEventListener("click", function () {
 
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: white;font-family: 'Ariel'; opacity: 0.7; border: solid purple 4px; color:black;" )
+    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: white;font-family: 'Ariel'; opacity: 0.7; border: solid purple 4px; color:black;")
     console.log(document.getElementById("title"))
 })
 
