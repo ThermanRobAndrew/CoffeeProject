@@ -68,7 +68,6 @@ function searchCoffees(e) {
 /*searchCoffees();*/
 
 
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -87,6 +86,7 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+
 // add new coffee function
 
 function addACoffee(e) {
@@ -94,15 +94,18 @@ function addACoffee(e) {
     let newRoastSelection = document.querySelector("#newRoast");
     let newCoffeeName = document.querySelector("#newName");
     let addedCoffee = {
-        id: coffees.length +1,
+        id: coffees.length + 1,
         name: newCoffeeName.value,
         roast: newRoastSelection.value
     };
     coffees.push(addedCoffee);
+    localStorage.setItem("newCoffeeObj",JSON.stringify(addedCoffee))
+    console.log(localStorage)
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-
+let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeObj"))
+coffees.push(storedCoffee)
 
 
 /// DOM Variables
