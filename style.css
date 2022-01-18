@@ -1,16 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 body {
     background: #f3f3f3;
+    font-family: 'Caveat', cursive;;
 }
 
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
 
 #coffee-man {
     margin-top: -8em;
