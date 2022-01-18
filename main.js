@@ -86,10 +86,13 @@ function addACoffee(e) {
         roast: newRoastSelection.value
     };
     coffees.push(addedCoffee);
+    localStorage.setItem("newCoffeeObj",JSON.stringify(addedCoffee))
+    console.log(localStorage)
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-
+let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeObj"))
+coffees.push(storedCoffee)
 
 
 /// DOM Variables
