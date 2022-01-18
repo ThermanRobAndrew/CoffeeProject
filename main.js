@@ -100,8 +100,6 @@ let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let nameButton = document.querySelector("#searching")
-
-
 let newCoffeeSubmit = document.querySelector("#newSubmit")
 
 
