@@ -21,6 +21,12 @@ a {
     margin-left: 25em;
 }
 
-.bi-instagram {
+#box1 {
+    background-color: aliceblue;
+    opacity: 70%;
+    border-radius: 15%;
+}
 
+.bg-light {
+    opacity: 70%;
 }
