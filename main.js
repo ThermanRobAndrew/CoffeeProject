@@ -15,7 +15,7 @@ function renderCoffee(coffee) {
 // Loop through and display specific coffees
 function renderCoffees(coffees) {
     let html = '';
-    for (let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -29,7 +29,7 @@ function updateCoffees(e) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         } else if (selectedRoast === "All") {
-            filteredCoffees.push(coffee)
+            filteredCoffees = coffees
         }
     });
     /// renders search function
@@ -51,8 +51,6 @@ function searchCoffees(e) {
     tbody.innerHTML = renderCoffees(searchCoffee);
 
 }
-
-/*searchCoffees();*/
 
 
 
@@ -86,13 +84,12 @@ function addACoffee(e) {
         roast: newRoastSelection.value
     };
     coffees.push(addedCoffee);
-    // localStorage.setItem("newCoffeeObj",JSON.stringify(addedCoffee))
-    // console.log(localStorage)
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-// let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeObj"))
-// coffees.push(storedCoffee)
+localStorage.setItem("newCoffeeIsh",JSON.stringify(coffees))
+let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeIsh"))
+coffees.push(storedCoffee)
 
 
 /// DOM Variables
@@ -106,7 +103,7 @@ let newCoffeeSubmit = document.querySelector("#newSubmit")
 
 
 //   renders table data
-tbody.innerHTML = renderCoffees(coffees.reverse());
+tbody.innerHTML = renderCoffees(coffees);
 
 
 //// Event Listeners
@@ -115,17 +112,17 @@ nameButton.addEventListener('keyup', searchCoffees);
 newCoffeeSubmit.addEventListener("click", addACoffee);
 
 // button    White-Mode//
-document.getElementById("btn").addEventListener("click", function () {
-
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: black; opacity: 0.2; border: solid grey 4px; color:white;")
-    console.log(document.getElementById("title"))
-})
-// button 2   White-Mode//
-document.getElementById("btn-two").addEventListener("click", function () {
-
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: white;font-family: 'Ariel'; opacity: 0.7; border: solid purple 4px; color:black;")
-    console.log(document.getElementById("title"))
-})
+// document.getElementById("btn").addEventListener("click", function () {
+//
+//     document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: black; opacity: 0.2; border: solid grey 4px; color:white;")
+//     console.log(document.getElementById("title"))
+// })
+// // button 2   White-Mode//
+// document.getElementById("btn-two").addEventListener("click", function () {
+//
+//     document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: white;font-family: 'Ariel'; opacity: 0.7; border: solid purple 4px; color:black;")
+//     console.log(document.getElementById("title"))
+// })
 
 
 
