@@ -87,9 +87,9 @@ function addACoffee(e) {
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-localStorage.setItem("newCoffeeIsh",JSON.stringify(coffees))
-let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeIsh"))
-coffees.push(storedCoffee)
+// localStorage.setItem("newCoffeeIsh",JSON.stringify(coffees))
+// let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeIsh"))
+// coffees.push(storedCoffee)
 
 
 /// DOM Variables
