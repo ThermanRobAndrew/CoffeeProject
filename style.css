@@ -11,3 +11,8 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
+#coffee-man {
+    margin-top: -8em;
+    margin-left: 25em;
+}
