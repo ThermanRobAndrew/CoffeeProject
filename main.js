@@ -36,20 +36,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-// function updateCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     let selectedRoast = roastSelection.value;
-//     let filteredCoffees = [];
-//     coffees.forEach(function(coffee) {
-//
-//         if (coffee.roast !== )
-//         if (coffee.roast === selectedRoast) {
-//             filteredCoffees.push(coffee);
-//         }
-//     });
-//     /// renders search function
-//     tbody.innerHTML = renderCoffees(filteredCoffees);
-// }
+
 // keyup function
 function searchCoffees(e) {
     e.preventDefault();
@@ -66,6 +53,7 @@ function searchCoffees(e) {
 }
 
 /*searchCoffees();*/
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -86,7 +74,6 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-
 // add new coffee function
 
 function addACoffee(e) {
@@ -94,18 +81,15 @@ function addACoffee(e) {
     let newRoastSelection = document.querySelector("#newRoast");
     let newCoffeeName = document.querySelector("#newName");
     let addedCoffee = {
-        id: coffees.length + 1,
+        id: coffees.length +1,
         name: newCoffeeName.value,
         roast: newRoastSelection.value
     };
     coffees.push(addedCoffee);
-    localStorage.setItem("newCoffeeObj",JSON.stringify(addedCoffee))
-    console.log(localStorage)
     tbody.innerHTML = renderCoffees(coffees);
 }
 
-let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeObj"))
-coffees.push(storedCoffee)
+
 
 
 /// DOM Variables
