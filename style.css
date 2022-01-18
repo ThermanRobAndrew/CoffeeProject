@@ -4,7 +4,10 @@ body {
     font-family: 'Caveat', cursive;;
 }
 
-
+a {
+    display: flex;
+    justify-content: space-between;
+}
 
 #coffee-man {
     margin-top: -8em;
