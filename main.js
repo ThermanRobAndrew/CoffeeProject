@@ -1,6 +1,6 @@
 "use strict"
 
-
+//Updated The Table//
 // Display All Coffees
 function renderCoffee(coffee) {
     let html = '<div class="coffee col g-3 d-flex">';
@@ -86,7 +86,7 @@ function addACoffee(e) {
     coffees.push(addedCoffee);
     tbody.innerHTML = renderCoffees(coffees);
 }
-
+// Is this why local storage isnt working
 // localStorage.setItem("newCoffeeIsh",JSON.stringify(coffees))
 // let storedCoffee = JSON.parse(localStorage.getItem("newCoffeeIsh"))
 // coffees.push(storedCoffee)
@@ -108,6 +108,8 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 nameButton.addEventListener('keyup', searchCoffees);
 newCoffeeSubmit.addEventListener("click", addACoffee);
+// EXTRA BUTTONS
+
 
 //button    White-Mode//
 document.getElementById("btn").addEventListener("click", function () {
