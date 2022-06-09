@@ -42,3 +42,20 @@ color: chocolate;
     width: 80%;
     margin: 5px 5px 5px 5px ;
 }
+
+.row {
+    margin: 13px 25px;
+}
+
+div#coffees {
+    font-size: 11px;
+}
+.card-container {
+    display: flex;
+}
+.card {
+flex-direction: row;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
