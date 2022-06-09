@@ -33,3 +33,12 @@ a {
 nav {
     color: black;
 }
+.lead {
+color: chocolate;
+}
+.jumbotron  {
+    background-color: aliceblue;
+    box-shadow: black 5px 5px 5px 5px;
+    width: 80%;
+    margin: 5px 5px 5px 5px ;
+}
