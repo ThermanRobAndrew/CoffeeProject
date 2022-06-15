@@ -59,3 +59,6 @@ flex-direction: row;
     margin-left: 5px;
     margin-right: 5px;
 }
+.card-body {
+    background-image: url("https://images.unsplash.com/photo-1518057111178-44a106bad636?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+}
