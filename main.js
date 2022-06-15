@@ -111,18 +111,4 @@ newCoffeeSubmit.addEventListener("click", addACoffee);
 // EXTRA BUTTONS
 
 
-//button    White-Mode//
-document.getElementById("btn").addEventListener("click", function () {
-
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: black; opacity: 0.2; border: solid grey 4px; color:white;")
-    console.log(document.getElementById("title"))
-})
-// button 2   White-Mode//
-document.getElementById("btn-two").addEventListener("click", function () {
-
-    document.getElementsByTagName("body")[0].setAttribute("style", "text-align: center; background-color: white;font-family: 'Ariel'; opacity: 0.7; border: solid purple 4px; color:black;")
-    console.log(document.getElementById("title"))
-})
-
-
 
